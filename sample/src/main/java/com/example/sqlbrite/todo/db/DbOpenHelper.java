@@ -16,8 +16,11 @@
 package com.example.sqlbrite.todo.db;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import org.sqlite.database.sqlite.SQLiteDatabase;
+import org.sqlite.database.sqlite.SQLiteOpenHelper;
+
+import java.io.File;
+
 
 final class DbOpenHelper extends SQLiteOpenHelper {
   private static final int VERSION = 1;
@@ -39,7 +42,7 @@ final class DbOpenHelper extends SQLiteOpenHelper {
       "CREATE INDEX item_list_id ON " + TodoItem.TABLE + " (" + TodoItem.LIST_ID + ")";
 
   public DbOpenHelper(Context context) {
-    super(context, "todo.db", null /* factory */, VERSION);
+    super(context, new File(context.getFilesDir(), "todo.db").getAbsolutePath(), null /* factory */, VERSION);
   }
 
   @Override public void onCreate(SQLiteDatabase db) {
