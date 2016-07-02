@@ -16,12 +16,13 @@
 package com.example.sqlbrite.todo.db;
 
 import android.app.Application;
-import android.database.sqlite.SQLiteOpenHelper;
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
+
+import org.sqlite.database.sqlite.SQLiteOpenHelper;
 import rx.schedulers.Schedulers;
 import timber.log.Timber;
 
