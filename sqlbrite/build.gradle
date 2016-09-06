@@ -11,6 +11,9 @@ dependencies {
   compile rootProject.ext.rxJava
   compile rootProject.ext.supportAnnotations
 
+  compile 'com.github.KeepSafe:ReLinker:1.2.1'
+  compile 'com.github.iosphere:sqlite-android:3.12.2'
+
   androidTestCompile rootProject.ext.supportTestRunner
   androidTestCompile(rootProject.ext.truth) {
     exclude group: 'junit' // Android has JUnit built in.
